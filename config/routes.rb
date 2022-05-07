@@ -1,9 +1,15 @@
 # frozen_string_literal: true
 
+require 'sidekiq_unique_jobs/web'
+
 Rails.application.routes.draw do
   resources :posts
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/overview', to: 'overview#index'
+  get '/overview/aj', to: 'overview#active_job'
+  get '/overview/sk', to: 'overview#sidekiq'
+
+  root 'posts#index'
+
+  mount Sidekiq::Web, at: '/sidekiq'
 end

@@ -3,15 +3,17 @@
 class StatsCollectorJob
   include Sidekiq::Job
 
-  sidekiq_options queue: 'sk'
+  sidekiq_options queue: 'sk',
+                  lock: :until_executed,
+                  on_conflict: { client: :raise, server: :raise }
 
-  def perform(*args)
-    sleep(2)
+  def perform(*_args)
+    sleep(5)
 
     File.open('log/sk.log', 'a') do |line|
-      line.puts "Health Check succeeded: #{DateTime.now} \n"
+      line.puts "Stats: #{rand(99)}\n"
     end
 
-    sleep(6)
+    sleep(5)
   end
 end

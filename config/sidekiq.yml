@@ -10,3 +10,10 @@ production:
   - default
   - sk
   - aj
+
+# sidekiq-scheduler
+:schedule:
+  stats_collector:
+    #cron: '0 * * * * *'       # Runs once per minute
+    every: 5s
+    class: StatsCollectorJob  # Running sidekiq directly

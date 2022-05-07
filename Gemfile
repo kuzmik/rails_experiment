@@ -4,19 +4,20 @@ source 'https://rubygems.org'
 
 ruby '3.1.1'
 
+gem 'mysql2'
 gem 'puma', '~> 5.0'
 gem 'rails'
 gem 'sprockets-rails'
 gem 'sqlite3', '~> 1.4'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'mysql2'
 
-gem 'redis'
 gem 'lockbox'
+gem 'redis'
 
-gem 'pry-rails'
 gem 'awesome_print'
+gem 'pry-rails'
 
+gem 'activejob-uniqueness'
 gem 'sidekiq', require: ['sidekiq', 'sidekiq/web']
 gem 'sidekiq-scheduler', require: ['sidekiq-scheduler', 'sidekiq-scheduler/web']
 gem 'sidekiq-unique-jobs', require: ['sidekiq']
@@ -40,8 +41,8 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'pry-stack_explorer'
 
-  gem 'bundler-audit'
   gem 'brakeman'
+  gem 'bundler-audit'
 
   gem 'bullet'
   gem 'database_cleaner'
@@ -53,7 +54,6 @@ group :development, :test do
   gem 'timecop'
 
   gem 'annotate'
-  gem 'listen'
   gem 'better_errors'
+  gem 'listen'
 end
-

@@ -3,7 +3,9 @@
 class HealthCheckJob < ApplicationJob
   queue_as :aj
 
-  def perform(*args)
+  unique :until_executed
+
+  def perform(*_args)
     sleep(2)
 
     File.open('log/aj.log', 'a') do |line|

@@ -55,6 +55,9 @@ GEM
     activejob (7.0.2.4)
       activesupport (= 7.0.2.4)
       globalid (>= 0.3.6)
+    activejob-uniqueness (0.2.3)
+      activejob (>= 4.2, < 7.1)
+      redlock (>= 1.2, < 2)
     activemodel (7.0.2.4)
       activesupport (= 7.0.2.4)
     activerecord (7.0.2.4)
@@ -220,6 +223,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redis (4.6.0)
+    redlock (1.2.2)
+      redis (>= 3.0.0, < 5.0)
     regexp_parser (2.3.1)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -305,6 +310,7 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  activejob-uniqueness
   annotate
   awesome_print
   better_errors
