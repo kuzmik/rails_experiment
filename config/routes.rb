@@ -3,6 +3,7 @@
 require 'sidekiq_unique_jobs/web'
 
 Rails.application.routes.draw do
+  resources :groups
   resources :posts
 
   get '/overview', to: 'overview#index'
