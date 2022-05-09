@@ -63,7 +63,7 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   config.log_formatter = ::Logger::Formatter.new
-  config.log_tags = [] #[:request_id]
+  config.log_tags = [] # [:request_id]
   config.active_support.deprecation = :log
   config.log_level = :debug
 end
